@@ -11,8 +11,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
+//cors 정책 에러 관련
 app.use(cors({
-    origin: "http://localhost:8081", // 접근 권한을 부여하는 도메인
+    origin: "http://localhost:3000", // 접근 권한을 부여하는 도메인
     credentials: true, // 응답 헤더에 Access-Control-Allow-Credentials 추가
     optionsSuccessStatus: 200, // 응답 상태 200으로 설정
 }));
@@ -64,7 +65,7 @@ app.post('/register',(req, res)=>{
 
 });
 
-app.post('/login', (req, res)=>{
+app.post('/loginCheck', (req, res)=>{
     console.log(req.body);
     let id = req.body.id;
     let pwd = req.body.pwd;
