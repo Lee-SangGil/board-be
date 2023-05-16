@@ -19,14 +19,14 @@ app.use(cors({
 }));
 
 const db = [
-    {name: '김길동', age:'29', id:'aaa', pwd:'aaa'},
-    {name: '이길동', age:'49', id:'bbb', pwd:'bbb'},
-    {name: '박길동', age:'40', id:'ccc', pwd:'ccc'},
-    {name: '공길동', age:'11', id:'dd', pwd:'dd'},
-    {name: '장길동', age:'19', id:'ee', pwd:'ee'},
-    {name: '사길동', age:'24', id:'ff', pwd:'ff'},
-    {name: '오길동', age:'52', id:'gg', pwd:'gg'},
-    {name: '육길동', age:'34', id:'hh', pwd:'hh'},
+    {name: '김길동', age:'29', id:'aaa', pwd:'aaa', region:'서울', gender:'남'},
+    {name: '이길동', age:'49', id:'bbb', pwd:'bbb', region:'부산', gender:'여'},
+    {name: '박길동', age:'40', id:'ccc', pwd:'ccc', region:'대구', gender:'남'},
+    {name: '공길동', age:'11', id:'dd', pwd:'dd', region:'제주', gender:'여'},
+    {name: '장길동', age:'19', id:'ee', pwd:'ee', region:'서울', gender:'남'},
+    {name: '사길동', age:'24', id:'ff', pwd:'ff', region:'인천', gender:'여'},
+    {name: '오길동', age:'52', id:'gg', pwd:'gg', region:'안산', gender:'남'},
+    {name: '육길동', age:'34', id:'hh', pwd:'hh', region:'안양', gender:'여'},
 ];
 
 app.listen(PORT, () => {
@@ -83,4 +83,8 @@ app.post('/loginCheck', (req, res)=>{
     }
     res.send(userName);
 
-})
+});
+
+app.post('/selectUserData', (req, res)=>{
+    res.send(db);
+});
